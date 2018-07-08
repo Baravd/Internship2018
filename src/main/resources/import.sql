@@ -1,0 +1,1 @@
+INSERT INTO player(id, current_ranking, dob, name) VALUES (-1, 1,'2018-03-03', 'Rafael Nadal');
