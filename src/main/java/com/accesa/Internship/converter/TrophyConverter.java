@@ -35,7 +35,6 @@ public class TrophyConverter extends BaseConverter<Trophy, TrophyDto> {
 
     @Override
     public Trophy convertDtoToModel(TrophyDto trophyDto) {
-        Player player = playerService.findById(trophyDto.getPlayerId());
-        return Trophy.builder().name(trophyDto.getName()).player(player).received(trophyDto.getReceived()).build();
+        return Trophy.builder().name(trophyDto.getName()).received(trophyDto.getReceived()).build();
     }
 }

@@ -15,8 +15,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -33,4 +37,7 @@ public class Player extends BaseEntity<Long> {
     private LocalDate dob;
 
     private Long currentRanking;
+
+    @OneToMany(mappedBy = "player", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Trophy> trophies;
 }
