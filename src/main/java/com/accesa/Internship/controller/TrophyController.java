@@ -33,7 +33,7 @@ public class TrophyController {
     }
 
     @PostMapping("/trophies")
-    public Trophy save(@RequestBody TrophyDto trophyDto) {
-        return trophyService.save(trophyConverter.convertDtoToModel(trophyDto));
+    public Trophy save(@RequestBody Trophy trophyDto) {
+        return trophyService.save(trophyDto);
     }
 }

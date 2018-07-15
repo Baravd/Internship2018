@@ -24,6 +24,7 @@ public class TrophyService {
     }
 
     public List<Trophy> findAll() {
-        return trophyRepository.findAll();
+        List<Trophy> all = trophyRepository.findAll();
+        return all;
     }
 }

@@ -5,6 +5,7 @@
 package com.accesa.Internship.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -34,8 +35,9 @@ public class Trophy extends BaseEntity<Long> {
     @NotNull
     private LocalDate received;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "player_id")
+    @JsonIgnore
     private Player player;
 
 

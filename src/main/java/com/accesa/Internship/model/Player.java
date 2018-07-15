@@ -8,6 +8,7 @@
 
 package com.accesa.Internship.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -39,5 +40,6 @@ public class Player extends BaseEntity<Long> {
     private Long currentRanking;
 
     @OneToMany(mappedBy = "player", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Trophy> trophies;
 }
